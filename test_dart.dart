@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 import 'package:meals_list/data/global_data.dart';
 import 'package:meals_list/models/category.dart';
 
-class CategoriesApi {
+void main() {
   String link = "https://www.themealdb.com/api/json/v1/1/categories.php";
 
   getData() async {
@@ -16,4 +16,14 @@ class CategoriesApi {
       allCategories.add(Category.fromJson(category));
     }
   }
+
+  getData();
+
+  allCategories.forEach((category) {
+    print('ID: ${category.id}');
+    print('Name: ${category.name}');
+    print('Image: ${category.image}');
+    print('Description: ${category.description}');
+    print('-----------------------------');
+  });
 }

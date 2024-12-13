@@ -1,5 +1,5 @@
 class Category {
-  int? id;
+  String? id;
   String? name;
   String? image;
   String? description;
@@ -8,6 +8,9 @@ class Category {
 
   factory Category.fromJson(Map<String, dynamic> json) {
     return Category(
-        id: json["idCategory"], name: json["strCategory"], image: json[""]);
+        id: json["idCategory"],
+        name: json["strCategory"],
+        image: json["strCategoryThumb"],
+        description: json["strCategoryDescription"]);
   }
 }
