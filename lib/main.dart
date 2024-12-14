@@ -10,6 +10,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    WidgetsApp.debugAllowBannerOverride = false;
     return const MaterialApp(home: WelcomePage());
   }
 }

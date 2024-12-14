@@ -19,11 +19,11 @@ void main() {
 
   getData();
 
-  allCategories.forEach((category) {
+  for (var category in allCategories) {
     print('ID: ${category.id}');
     print('Name: ${category.name}');
     print('Image: ${category.image}');
     print('Description: ${category.description}');
     print('-----------------------------');
-  });
+  }
 }
