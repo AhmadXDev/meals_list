@@ -10,15 +10,12 @@ class WelcomePage extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          // stack child 1
           Positioned.fill(
             child: Image.asset(
               "assets/background.png",
               fit: BoxFit.cover,
             ),
           ),
-
-          // stack child 2
           Align(
             alignment: Alignment.bottomCenter,
             child: ElevatedButton(

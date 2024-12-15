@@ -1,9 +1,9 @@
-// ignore_for_file: avoid_print
-
 import 'package:flutter/material.dart';
+import 'package:meals_list/constants/theme.dart';
 import 'package:meals_list/data/global_data.dart';
 import 'package:meals_list/extensions/push.dart';
-import 'package:meals_list/pages/meals_page.dart';
+import 'package:meals_list/pages/meals_page_bonus.dart';
+// import 'package:meals_list/pages/meals_page.dart';
 import 'package:meals_list/services/categories_api.dart';
 import 'package:meals_list/widgets/text_widget.dart';
 
@@ -14,8 +14,9 @@ class CategoriesPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue,
+        backgroundColor: barColor,
         title: const Text("Categories Page"),
+        centerTitle: true,
       ),
       body: Padding(
           padding: const EdgeInsets.all(8),
@@ -31,9 +32,13 @@ class CategoriesPage extends StatelessWidget {
                             padding: const EdgeInsets.all(8.0),
                             child: InkWell(
                                 onTap: () {
-                                  context.push(MealsPage(
-                                      meal: allCategories[index]
-                                          .name
+                                  context.push(MealsPageBonus(
+                                      meal:
+                                          allCategories[index].name.toString(),
+                                      categoryImage:
+                                          allCategories[index].image.toString(),
+                                      categoryDescription: allCategories[index]
+                                          .description
                                           .toString()));
                                 },
                                 child: SizedBox(
